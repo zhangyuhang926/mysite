@@ -36,7 +36,7 @@ def get_nickname_or_username(self):
         profile = Profile.objects.get(user=self)
         return profile.nickname
     else:
-        return ['%s'] % self.username
+        return '[%s]' % self.username
 
 def has_nickname(self):
     return Profile.objects.filter(user=self).exists()

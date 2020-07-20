@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.db.models import Count
+from django.contrib.contenttypes.models import ContentType
 
 from .models import Blog, BlogType
 from read_statistics.utils import read_statistics_once_read
@@ -53,7 +54,7 @@ def blogs_with_type(request, blog_type_pk):
     blogs_all_list = Blog.objects.filter(blog_type=blog_type)
     context = get_blog_list_common_data(request, blogs_all_list)
     context['blog_type'] = blog_type
-    return render(request ,'blog/blogs_with_date.html', context)
+    return render(request ,'blog/blogs_with_type.html', context)
 
 def blogs_with_date(request, year, month):
     blogs_all_list = Blog.objects.filter(created_time__year=year, created_time__month=month)

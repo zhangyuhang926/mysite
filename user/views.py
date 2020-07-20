@@ -91,7 +91,7 @@ def create_user_by_qq(request):
     # 创建随机用户
     username = str(int(time.time()))
     password = ''.join(random.sample(string.ascii_letters + string.digits, 16))
-    user = User.objects.create_user(username, password)
+    user = User.objects.create_user(username, '', password)
 
     profile = Profile()
     profile.user = user

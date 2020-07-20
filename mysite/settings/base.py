@@ -149,6 +149,6 @@ CACHES = {
 
 # QQ登录配置
 QQ_APP_ID = '101888459'
-QQ_REDIRECT_URL = 'https://zhangcoding.com/user/login_by_qq'
-QQ_STATE = 'zhangcoding'
 QQ_APP_KEY = os.environ['QQ_APP_KEY']
+QQ_REDIRECT_URL = 'http://zhangcoding.com/user/login_by_qq'
+QQ_STATE = 'zhangcoding'

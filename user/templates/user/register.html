@@ -33,7 +33,7 @@
                                 <span id="tip" class="text-danger">{{ reg_form.non_field_errors }}</span>
                                 <div class="cleanfix"></div>
                                 <a style="margin-top: 8px; display: inline-block;" href="{% get_login_qq_url %}">
-                                    <img src="{% static 'user/qq.png' %}" alt="">
+                                    <img src="{% static 'user/qq.png' %}">
                                     使用QQ账号登录
                                 </a>
                                 <input type="submit" value="注册" class="btn btn-primary pull-right">
@@ -41,9 +41,9 @@
                         </div>
                     </div>
                     {% if request.GET.from %}
-                        <a style="margin: 0 auto; text-align: center; display: block" href="{% url 'login' %}?from={{ request.GET.from }}">已注册，前往登录 &gt;&gt;</a>
+                        <a style="text-align: center; display: block;" href="{% url 'login' %}?from={{ request.GET.from }}">已注册，前往登录 &gt;&gt;</a>
                     {% else %}
-                        <a style="margin: 0 auto; text-align: center; display: block" href="{% url 'login' %}?from={{ request.get_full_path }}">已注册，前往登录 &gt;&gt;</a>
+                        <a style="text-align: center; display: block;" href="{% url 'login' %}?from={{ request.get_full_path }}">已注册，前往登录 &gt;&gt;</a>
                     {% endif %}
                 {% else %}
                     <span>已登录，跳转到首页...</span>
